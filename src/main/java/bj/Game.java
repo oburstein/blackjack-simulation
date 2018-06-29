@@ -6,7 +6,7 @@ import java.util.List;
 public class Game {
 
     List<Player> players;
-    Player dealer = new Player("Dealer");
+    Player dealer = new Dealer("Dealer");
 
     public Game() {
         players = new ArrayList<Player>();

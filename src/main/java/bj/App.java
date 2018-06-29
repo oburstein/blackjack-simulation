@@ -12,10 +12,12 @@ public class App {
         deck.shuffleDeck();
         //System.out.println(deck.toString());
 
-        Player omer = new HumanPlayer("Omer");
-        omer.hand.getNewHand(deck.dealCard(), deck.dealCard());
-        System.out.println(omer.hand.toString());
-        omer.hand.hit(deck.dealCard());
+        //Player omer = new HumanPlayer("Omer");
+        //omer.hitOrStay(deck);
+        Player dealer = new Dealer("Dealer");
+        dealer.hand.getNewHand(deck.dealCard(), deck.dealCard());
+        //System.out.println(dealer.hand.toString());
+        dealer.hitOrStay(deck);
         //System.out.println(omer.hand.toString());
 
 

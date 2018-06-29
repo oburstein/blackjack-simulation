@@ -14,7 +14,7 @@ public abstract class Player {
         hand = new Hand();
     }
 
-    public abstract void hitOrStay();
+    public abstract void hitOrStay(Deck deck);
 
     public class Hand {
 
@@ -50,7 +50,7 @@ public abstract class Player {
 
         public void hit(Card card) {
             this.hand.add(card);
-            System.out.println("You hit! You got a " + card.toString());
+            System.out.println(card.toString() + " was drawn.");
             this.addCardToTotal(card);
             boolean bust = this.checkIfBust();
             if (bust) {
@@ -83,6 +83,22 @@ public abstract class Player {
             }
             sb.append("HandTotal = " +this.handTotal);
             return sb.toString();
+        }
+
+        public boolean hasCards() {
+            if (this.hand.isEmpty()) {
+                return true;
+            }
+            return false;
+        }
+
+        public Card showFirstCard() {
+            if (hasCards()) {
+                return this.hand.get(0);
+            }
+            else {
+                return null;
+            }
         }
 
     }
