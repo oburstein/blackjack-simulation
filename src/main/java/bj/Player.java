@@ -3,16 +3,18 @@ package bj;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
+public abstract class Player {
 
     public String name;
     public Hand hand;
-    public double bankRoll;
+    public double bankRoll = 1000.00;
 
     public Player(String name) {
         this.name = name;
         hand = new Hand();
     }
+
+    public abstract void hitOrStay();
 
     public class Hand {
 
@@ -55,7 +57,7 @@ public class Player {
                 System.out.println("You busted");
             }
             else {
-                System.out.println(hand.toString());
+                System.out.println(this.toString());
             }
         }
 
